@@ -1,1 +1,15 @@
 Imagine that you are hired to enable data analytics; where would you start? How would you go about gathering requirements?
+
+My following decisions would vary heavily based on the size of the company, regulatory/security compliances, and what the company wants to get out of analytics. 
+However, I would start by looking at the database structure that is already in place. Something I have seen that I believe would be useful is implementing a tier system for data. 
+So tier 1 would be the raw data from the systems it originates from. Then there would be a tier 2 layer where the data is cleaned and transformed slightly. Also, every field in 
+this layer will have a documented definition and documented industry-specific knowledge related to it. Tier 3 would be your use case layer, where you apply business rules and 
+aggregations to create use case-specific views.
+ I think by doing this, you can use your tier 3 layer to cater to whatever analytic needs are necessary. This model is also scalable and adaptable, which will be very useful as the company grows. 
+
+To gather requirements, I would hold sessions with different domains within the company. I believe it would be good to have technology and business in these calls. With each meeting, 
+I would hope to understand their specific use cases for analytics. Generally speaking, I think it is better to ask broadly what they hope to achieve and then try to fit the views to enable that. 
+As for managing warehouses, maintaining and scheduling pipelines, and choosing tech stacks, I am not sure that I would even know how to start. I am very new to this, and these are things I have 
+not thought about much. However, I think the best option is to always lean on the people who will be using these tools and doing this work. So gathering information from the business and technology 
+groups would probably be my starting point. 
+

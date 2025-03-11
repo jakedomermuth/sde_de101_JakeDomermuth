@@ -1,0 +1,27 @@
+### [Exercise] 
+
+Calculate the money lost due to discounts. Use lineitem to get the price of items (without discounts) that are part of an order and compare it to the order.
+
+**Time limit during live workshop: 10 min**
+
+**Hint**: Figure out the grain that the comparison need to be made in. Think in steps i.e. get the price of all the items in an order without discounts and then compare it to the orders data whose `totalprice` has been computed with discounts.
+
+
+
+%%sql
+WITH Prices as(
+    SELECT Sum(l.l_extendedprice) as no_discount,
+    l.l_orderkey
+    FROM lineitem l
+    GROUP BY l.l_orderkey)
+SELECT no_discount - o.o_totalprice as losses, o_orderkey
+FROM prices p
+LEFT JOIN orders o
+ON p.l_orderkey = o.o_orderkey
+ORDER BY o.o_orderkey asc 
+
+
+
+
+CASE Study 
+-

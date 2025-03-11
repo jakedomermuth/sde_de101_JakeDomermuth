@@ -34,7 +34,6 @@ WHERE RNK <= 3
 	2. o_custkey: From orders table
 	3. o_totalprice: From orders table
 	4. totalprice_diff: The customers current day's o_totalprice - that same customers most recent previous purchase's o_totalprice
-
 * **Time limit during live workshop: 5 min**
 
 %%sql

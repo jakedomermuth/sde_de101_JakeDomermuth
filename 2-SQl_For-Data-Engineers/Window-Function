@@ -26,3 +26,22 @@ FROM (
       OVER (PARTITION BY o_orderdate ORDER BY o_totalprice ASC)  as rnk
       FROM orders) 
 WHERE RNK <= 3
+
+
+
+### [Exercise] Write a SQL query using the `orders` table that calculates the following columns:
+	1. o_orderdate: From orders table
+	2. o_custkey: From orders table
+	3. o_totalprice: From orders table
+	4. totalprice_diff: The customers current day's o_totalprice - that same customers most recent previous purchase's o_totalprice
+
+* **Time limit during live workshop: 5 min**
+
+%%sql
+SELECT
+    o_orderdate,
+    o_custkey,
+    o_totalprice,
+    LAG(o_totalprice)
+    OVER(PARTITION BY o_custkey ORDER BY O_orderDate) - o_totalprice as total_price_diff
+FROM ORDERS

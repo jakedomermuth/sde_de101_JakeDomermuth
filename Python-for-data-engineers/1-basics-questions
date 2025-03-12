@@ -146,7 +146,8 @@ class DataExtractor:
         pass
 
 # Question: How do you create a DataExtractor object and print its some_value attribute?
-
+extractor = DataExtractor('Data Source')
+print(extractor.some_value)
 
 
 # Libraries are code that can be reused.
